@@ -39,4 +39,6 @@ formulaire.addEventListener("submit", async (event) => {
   const token = result.token
 
   localStorage.setItem("token", token)
+    
+  window.location.href = "../HTML/profile.html"
 })
