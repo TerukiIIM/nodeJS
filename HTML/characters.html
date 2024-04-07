@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <title>Characters | Harry Potter</title>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/x-icon" href="../Images/LogoHP.png">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Protest+Revolution&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css"/>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.2/dist/simple-lightbox.min.css"/>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    </head>
+
+    <body>
+        <!-- MAIN PAGE -->
+        <header>
+            <!-- NAVBAR -->
+            <nav>
+                <a href="#" class="logo"><img src="../Images/HarryPotter.png" alt=""></a>
+
+                <div class="navLinks">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="characters.html">Characters</a></li>
+                        <li><a href="roll.html">Roll</a></li> 
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="icons">
+                    <i class="darkMode fa fa-sun" onclick="changeModeIcon(this)"></i>
+                    
+                    <i class="log ri-user-fill"></i>
+
+                    <i class="menu fa fa-bars" onclick="changeMenuIcon(this)"></i>
+                        
+                    </label>
+                </div>
+            </nav>
+
+            <!-- TITLE -->
+            <div class="textBox">
+                <h1>Characters</h1>
+            </div>
+        </header>
+        
+        
+        <section class="allCharacters">
+            <!-- FILTER -->
+            <div class="filter">
+                <ul>
+                    <li data-filter="all" class="active">All</li>
+                    <li data-filter="Gryffindor">Gryffindor</li>
+                    <li data-filter="Slytherin">Slytherin</li>
+                    <li data-filter="Hufflepuff">Hufflepuff</li>
+                    <li data-filter="Ravenclaw">Ravenclaw</li>
+                    <li data-filter="Staff">Staff</li>
+                    <li data-filter="Villain">Villain</li>
+                    <li data-filter="Wizard">Wizard</li>
+                    <li data-filter="Other">Other</li>
+                </ul>
+            </div>
+
+            <!-- Character TABLE -->
+            <div class="tabCharacter">
+                
+            </div>
+        </section>
+
+        <!-- <div class="card filtr-item" data-category="Poufsouffle">
+            <div class="cardHeader">
+                <p class="cardTitle">Poufsouffle</p>
+                <div class="cardChara">loyauté</div>
+            </div>
+
+            <a href="./Pou.webp">
+            <img src="./Pou.webp" alt="poufsouffle" />
+            </a>
+        </div> -->
+
+        <!-- <section class="characters">
+            <div class="line">
+                <ul>
+                    <li><img src="Characters/Harry.png" alt="Harry"></li>
+                    <li><img src="Characters/Hermione.png" alt="Hermione"></li>
+                    <li><img src="Characters/Ron.png" alt="Ron"></li>
+                </ul>
+            </div>
+            
+            <div class="line">
+                <ul>
+                    <li><img src="Characters/Malfoy.png" alt="Malfoy"></li>
+                    <li><img src="Characters/Neville.png" alt="Neville"></li>
+                    <li><img src="Characters/Luna.png" alt="Luna"></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="socialIcons">
+                <a href="#"><i class="ri-discord-fill"></i></i></a>
+                <a href="#"><i class="ri-github-fill"></i></a>
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+            </div>
+        </footer>
+    </body>
+
+    <!-- Le bonton permet de faire appel à la fonction "topFunction" -->
+    <button onclick="topFunction()" class="scrollToTop" title="Scroll To Top">▲</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/filterizr/2.2.4/vanilla.filterizr.min.js" integrity="sha512-MMprw2AB5GAiQmXXEz5JYiGq2waU0iqD7Whj33m1w0V6Zzt1wyTFnr6rxWW8mfdQ/VksbUkU5c8sVGlO+3stew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.2/dist/simple-lightbox.min.js"></script>
+
+    <!-- Bibliothèque pour faire des slider -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+
+    <script src="../JS/script.js"></script>
+</html>

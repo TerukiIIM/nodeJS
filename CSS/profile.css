@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* [Header] */
+header {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    background: goldenrod;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 370px;
+    width: 100%;
+    background: darkgoldenrod;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: ivory;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.profile .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.text .name {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.text .mail {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* [Darkmode] */
+.darkMode .textBox {
+	color: white;
+}
+
+.darkMode header {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.darkMode .summary ul li a {
+	color: gold;
+}
+
+.darkMode .content .text:hover {
+	box-shadow:  0 10px 10px rgba(218, 165, 32, 0.3);
+}
+
+/* [Navbar] */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(25px);
+    z-index: -1;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+nav:hover::after {
+    left: 100%;
+}
+
+/* [Logo] */
+.logo img {
+    position: absolute;
+    width: 150px;
+	top: 0;
+}
+
+/* [Navlinks] */
+nav a {
+    color: goldenrod;
+    font-size: 18px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 25px;
+}
+
+nav ul li a:hover {
+	color: gold;
+	transition: 0.5s;
+}
+
+nav ul li.active a {
+	color: goldenrod;
+	font-weight: 800;
+}
+
+/* [Icons] */
+.icons {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.icons i {
+    padding: 10px;
+}
+
+.icons .menu {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .icons {
+        padding: 32px 11%;
+    }
+
+    .icons .menu {
+        position: absolute;
+        display: inline-flex;
+    }
+    
+    nav {
+        padding: 0;
+    }
+
+    .logo img  {
+        position: absolute;
+        left: 5%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .navLinks {
+        top: 0;
+        left: 0 ;
+        position: absolute;
+        background-color: rgba(5,10,30,0.7);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .mobileMenu {
+        margin-left: 0;
+    }
+    
+    .navLinks ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navLinks ul li {
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+}

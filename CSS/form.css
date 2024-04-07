@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* [Header] */
+header {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../Images/LightMode.png);
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.textBox {
+	width: 100%;
+	color: white;
+	text-align: center;
+    padding-top: 20%;
+}
+
+.textBox h1 {
+	font-size: 90px;
+}
+
+/* [Darkmode] */
+.darkMode {
+	color: white;
+}
+
+.darkMode header {
+	background-image: url(../Images/DarkMode.png);
+}
+
+.darkMode .summary ul li a {
+	color: gold;
+}
+
+.darkMode .content .text:hover {
+	box-shadow:  0 10px 10px rgba(218, 165, 32, 0.3);
+}
+
+/* [Navbar] */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(25px);
+    z-index: -1;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+nav:hover::after {
+    left: 100%;
+}
+
+/* [Logo] */
+.logo img {
+    position: absolute;
+    width: 150px;
+	top: 0;
+}
+
+/* [Navlinks] */
+nav a {
+    color: goldenrod;
+    font-size: 18px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 25px;
+}
+
+nav ul li a:hover {
+	color: gold;
+	transition: 0.5s;
+}
+
+nav ul li.active a {
+	color: goldenrod;
+	font-weight: 800;
+}
+
+/* [Icons] */
+.icons {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.icons i {
+    padding: 10px;
+}
+
+.icons .menu {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .icons {
+        padding: 32px 11%;
+    }
+
+    .icons .menu {
+        position: absolute;
+        display: inline-flex;
+    }
+    
+    nav {
+        padding: 0;
+    }
+
+    .logo img  {
+        position: absolute;
+        left: 5%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .navLinks {
+        top: 0;
+        left: 0 ;
+        position: absolute;
+        background-color: rgba(5,10,30,0.7);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .mobileMenu {
+        margin-left: 0;
+    }
+    
+    .navLinks ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navLinks ul li {
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+}
+
+/* [Register] */
+.register {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform 0.5s ease, height 0.2s ease;
+    margin: auto;
+    top: 150px;
+}
+
+.register.activeRegister {
+    transform: scale(1);
+}
+
+.register.active {
+    height: 520px;
+}
+
+.register .formBox {
+    width: 100%;
+    padding: 40px;
+}
+
+.register .formBox.login {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+    
+}
+
+.register.active .formBox.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.register .formBox.registration {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.register.active .formBox.registration {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+}
+
+.register .closeIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.formBox h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+.inputBox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+    font-family: 'Playfair Display', serif;
+}
+
+.inputBox input:focus~label, .inputBox input:valid~label {
+    top: -5px;
+}
+
+.inputBox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.inputBox .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: white;
+    line-height: 57px;
+}
+
+.rememberForgot {
+    font-size: 0.9em;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rememberForgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.rememberForgot a {
+    color: white;
+}
+
+.rememberForgot a:hover {
+    text-decoration: underline;
+    
+}
+
+.submit {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, gold, goldenrod, gold );
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.4em;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+}
+
+.loginRegister {
+    font-size: 0.9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.loginRegister p a {
+    color: white;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+}
+
+.loginRegister p a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    .register {
+        width: 300px;
+    }
+}

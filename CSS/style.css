@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Protest+Revolution&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Protest Revolution', sans-serif;
+}
+
+/* [ScrollBar] */
+/* Cette ligne permet de faire disparaitre la scrollbar de l'écran */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* [Header] */
+header {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../Images/LightMode.png);
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.textBox {
+	width: 100%;
+	color: white;
+	text-align: center;
+    padding-top: 20%;
+}
+
+.textBox h1 {
+	font-size: 90px;
+}
+
+/* [Darkmode] */
+.darkMode {
+	color: white;
+}
+
+.darkMode header {
+	background-image: url(../Images/DarkMode.png);
+}
+
+.darkMode .summary ul li a {
+	color: gold;
+}
+
+.darkMode .content .text:hover {
+	box-shadow:  0 10px 10px rgba(218, 165, 32, 0.3);
+}
+
+/* [Navbar] */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(25px);
+    z-index: -1;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+nav:hover::after {
+    left: 100%;
+}
+
+/* [Logo] */
+.logo img {
+    position: absolute;
+    width: 150px;
+	top: 0;
+}
+
+/* [Navlinks] */
+nav a {
+    color: goldenrod;
+    font-size: 18px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 25px;
+}
+
+nav ul li a:hover {
+	color: gold;
+	transition: 0.5s;
+}
+
+nav ul li.active a {
+	color: goldenrod;
+	font-weight: 800;
+}
+
+/* [Icons] */
+.icons {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.icons i {
+    padding: 10px;
+}
+
+.icons .menu {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .icons {
+        padding: 32px 11%;
+    }
+
+    .icons .menu {
+        position: absolute;
+        display: inline-flex;
+    }
+    
+    nav {
+        padding: 0;
+    }
+
+    .logo img  {
+        position: absolute;
+        left: 5%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .navLinks {
+        top: 0;
+        left: 0 ;
+        position: absolute;
+        background-color: rgba(5,10,30,0.7);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .mobileMenu {
+        margin-left: 0;
+    }
+    
+    .navLinks ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navLinks ul li {
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+}
+
+/* [Sections] */
+section {
+	padding: 0 5%;
+}
+
+section h2 {
+	text-align: center;
+	font-size: 35px;
+	font-weight: 600;
+    padding: 50px 0 20px;
+}
+
+/* [Summary] */
+.summaryList {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding: 75px 0; 
+}
+
+.summary {
+	margin: 5%;
+	padding: 20px ; 
+}
+
+.summary ul li{
+	list-style: none;
+	padding: 10px 10px;
+	position: relative;
+	text-decoration: none;
+}
+
+.summary ul li a {
+	color: black;
+}
+
+.summary ul li a:hover {
+	color: goldenrod;
+}
+
+/* [Content] */
+.content  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
+}
+
+.content img {
+    width: 85%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.content .text {
+    width: 90%;
+	color: black;
+    background: #fcedab;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.content .text h3, .content .text p {
+    font-family: 'Playfair Display', serif;
+}
+
+.content .text:hover {
+	box-shadow:  0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 900px) {
+	.content {
+		grid-template-columns: 1fr;
+	}
+
+    .content img {
+        width: 75%;
+        align-items: center;
+        margin: auto;
+    }
+    
+    .content .text {
+        width: 75%;
+        align-items: center;
+        margin: auto;
+    }
+}
+
+/* [Characters & Creatures] */
+/* .characters, .creatures {
+    width: 100%;
+    margin: auto;
+}
+
+.characters ul, .creatures ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.characters ul li, .creatures ul li {
+    padding: 20px;
+}
+
+.characters ul li img, .creatures ul li img {
+    width: 100%;
+}
+
+.characters ul li img:hover, .creatures ul li img:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+	.characters ul, .creatures ul {
+		flex-direction: column;
+	}
+} */
+
+/* Characters */
+.allCharacters {
+    padding: 50px 0;
+}
+
+.filter {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter ul {
+    display: flex;
+    gap: 25px;
+}
+
+.filter ul li {
+    color: white;
+    background-color: goldenrod;
+    padding: 10px 13px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.filter li.active {
+    background-color: gold;
+}
+
+.tabCharacter {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px 0 0 25px !important;
+}
+
+.card {
+    width: 35%;
+    background-color: #f6f6f6;
+}
+
+.card:hover {
+    background-color: goldenrod;
+    opacity: 0.8;
+}
+
+.cardHeader {
+    padding: 20px;
+}
+
+.cardTitle {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222D3B;
+}
+
+.cardChara {
+    font-size: 14px;
+    color: #87878a;
+    margin-top: 6px;
+}
+
+.card img {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+    .filter ul {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card img {
+        width: 100%;
+    }
+}
+
+/* [Join] */
+.join {
+	margin: 100px auto;
+	width: 80%;
+	background-image: url(https://i.pinimg.com/originals/42/15/16/4215160cd86906dd063387dd26937f21.gif);
+	background-position: center;
+	background-size: cover;
+	border-radius: 10px;
+	text-align: center;
+	padding: 100px 0;
+}
+
+.join  h2 {
+	color: white;
+	margin-bottom: 40px;
+	padding: 0;
+}
+
+.heroBtn {
+	display: inline-block;
+	color: white;
+	border: 1px solid white;
+	padding: 15px 30px;
+	font-size: 15px;
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+}
+
+.heroBtn:hover {
+	background: goldenrod;
+	border: 1px solid goldenrod;
+	transition: 0.5s;
+}
+
+@media screen and (max-width: 900px) {
+	.join  h2 {
+		font-size: 25px
+	}
+}
+
+/* [Footer] */
+footer {
+	background-color: black;
+	width: 100%;
+	padding: 70px 30px 20px;
+}
+
+.credit {
+	letter-spacing: 1px;
+	color: white;
+	text-align: center;
+}
+
+.socialIcons {
+	display: flex;
+	justify-content: center;
+}
+
+.socialIcons a {
+	padding: 10px;
+	background-color: white;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+.socialIcons a i {
+	font-size: 2em;
+	color: black;
+	opacity: 0.9;
+}
+
+.socialIcons a:hover {
+	background-color: #111;
+	transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+	color: white;
+	transition: 0.5s;
+}
+
+@media screen and (max-width: 900px) {
+	body	 {
+		width: 100%;
+	}
+}
+
+/* [HP-API] */
+#character {
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    margin: 100px auto 0;
+	width: 60%;
+}
+
+#character h2 {
+    font-size: 50px;
+    color: white;
+}
+
+#character img {
+    width: auto;
+    height: 250px;
+}
+
+.rollBtn {
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+	border-radius: 25px;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    #character {
+        width: 75%;
+    }
+
+    #character h2 {
+        font-size: 45px;
+        color: white;
+    }
+
+    #character img {
+        width: auto;
+        height: 250px;
+    }
+}
+
+/* [Other Elements] */
+button {
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+    background: goldenrod;
+    width: 100px;
+    height: 50px;
+}
+
+.scrollToTop {
+    display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	color: white;
+    background-color: goldenrod;
+	padding: 20px;
+    border: none;
+	border-radius: 25px;
+	font-size: 20px;
+	z-index: 100;
+    width: 60px;
+    height: 65px;
+}
+
+.scrollToTop:hover {
+	background-color: gold;
+}
